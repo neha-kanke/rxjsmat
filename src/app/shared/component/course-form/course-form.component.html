@@ -1,0 +1,37 @@
+<h2>{{cousrdata.description}}</h2>
+
+<mat-form [formGroup]="courseform"(Submit)="oncouser()" class="form-colo">
+    <mat-dialog-content>
+        <mat-form-field>
+            <input type="text" formControlName="description" matInput placeholder="courses description">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select matInput placeholder="category">
+                <mat-option value="BIGINNER">
+                  Biginner
+                </mat-option>
+                <mat-option value="INTERMEDIATE">
+                   Intermediate
+                </mat-option>
+                <mat-option value="ADVANCED">
+                   Advanced
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+                <input type="text" matInput placeholder="releasedAt" formControlName="releasedAt" [matDatepicker]="Matdatepicker">
+                <mat-datepicker-toggle matSuffix [for]="Matdatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #Matdatepicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>longdecription</mat-label>
+            <input matInput placeholder="longdecription" formControlName="longdecription">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="button"  matTooltip="close couser">close</button>
+            <button mat-raised-button color="primary" type="submit" matTooltip="save the coussers form">Save</button>
+          </mat-card-actions>
+    </mat-dialog-content>
+</mat-form>

@@ -1,0 +1,15 @@
+<mat-card *ngFor="let couser of courselistaay" class="card-course mat-elevation-z10 ">
+    <mat-card-header>
+<mat-card-title>
+    {{couser.description}}
+</mat-card-title>
+    </mat-card-header>
+    <img [src]="couser.iconUrl" alt="">
+    <mat-card-content>
+        {{couser.longDescription}}
+    </mat-card-content>
+    <mat-card-actions class="card-butt">
+        <button mat-raised-button color="primary" matTooltip="all courses view">view courses</button>
+        <button mat-raised-button color="accent" (click)="oneditcourse(couser)"matTooltip="only edit courses detail" >edit courses</button>
+    </mat-card-actions>
+</mat-card>
